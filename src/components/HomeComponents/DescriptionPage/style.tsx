@@ -8,6 +8,7 @@ interface StyledProps {
 
 export const DescriptionPageContainer = styled.div<StyledProps>`
   display: flex;
+  position: relative;
   gap: 16px;
   justify-content: center;
   align-items: center;
@@ -60,5 +61,32 @@ export const DescriptionContainer = styled.div<StyledProps>`
   span {
     font-size: 1.35rem;
     color: ${(props) => props.palette.fontSeconry};
+  }
+`;
+
+export const ArrowBackContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+
+  svg {
+    animation: bounce 1.2s infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(10px);
+    }
+    60% {
+      transform: translateY(0);
+    }
   }
 `;

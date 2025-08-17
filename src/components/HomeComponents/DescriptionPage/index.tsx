@@ -1,4 +1,5 @@
 import {
+  ArrowBackContainer,
   DescriptionContainer,
   DescriptionPageContainer,
   DeveloperContainer,
@@ -10,6 +11,7 @@ import ButtonWrapper from "../ButtonWrapper";
 import { useDescription } from "../../../Hooks/useDescription";
 import { useTheme } from "../../../Hooks/useTheme";
 import ThemeToggle from "../ThemeToggle";
+import { FaRegArrowAltCircleDown } from "react-icons/fa";
 
 const DescriptionPage = () => {
   const { title } = useDescription();
@@ -38,6 +40,9 @@ const DescriptionPage = () => {
       </DescriptionContainer>
 
       <ButtonWrapper />
+      <ArrowBackContainer>
+        <FaRegArrowAltCircleDown size={30} color={palette.fontSeconry} />
+      </ArrowBackContainer>
     </DescriptionPageContainer>
   );
 };
