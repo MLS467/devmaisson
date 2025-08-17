@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { palette } from "../constants/colors";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -8,12 +9,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: ${palette.background};
+    font-family: Inter,system-ui,sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
   }
 `;

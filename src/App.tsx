@@ -1,8 +1,10 @@
+import DescriptionPage from "./components/HomeComponents/DescriptionPage";
+
 function App() {
   return (
-    <>
-      <h1>Hello World</h1>
-    </>
+    <div style={{ padding: "0 8%" }}>
+      <DescriptionPage />
+    </div>
   );
 }
 
