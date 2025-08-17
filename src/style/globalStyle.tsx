@@ -1,7 +1,11 @@
 import { createGlobalStyle } from "styled-components";
-import { palette } from "../constants/colors";
+import { type PaletteType } from "../constants/colors";
 
-export const GlobalStyle = createGlobalStyle`
+interface GlobalStyleProps {
+  palette: PaletteType;
+}
+
+export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   * {
     margin: 0;
     padding: 0;
@@ -11,9 +15,11 @@ export const GlobalStyle = createGlobalStyle`
   body {
     width: 100vw;
     height: 100vh;
-    background-color: ${palette.background};
-    font-family: Inter,system-ui,sans-serif;
+    background-color: ${(props) => props.palette.background};
+    color: ${(props) => props.palette.fontPrimary};
+    font-family: Inter, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 `;

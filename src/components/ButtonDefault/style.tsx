@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { palette } from "../../constants/colors";
+import { lightPalette } from "../../constants/colors";
 
 interface ButtonDefaultStyledProps {
   $bgColor?: string;
@@ -8,7 +8,7 @@ interface ButtonDefaultStyledProps {
 export const ButtonDefaultStyled = styled.button<ButtonDefaultStyledProps>`
   display: flex;
   background-color: ${({ $bgColor }) =>
-    $bgColor ? $bgColor : palette.background};
+    $bgColor ? $bgColor : lightPalette.background};
 
   border: 1px solid ${({ $bgColor }) => ($bgColor ? $bgColor : "#ccc")};
   border-radius: 10px;
@@ -29,7 +29,7 @@ export const ButtonDefaultStyled = styled.button<ButtonDefaultStyledProps>`
 
   &:hover {
     background-color: ${({ $bgColor }) =>
-      $bgColor ? $bgColor : palette.greenDefault};
+      $bgColor ? $bgColor : lightPalette.greenDefault};
     color: white;
   }
 `;

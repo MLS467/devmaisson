@@ -1,14 +1,17 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { GlobalStyle } from "./style/globalStyle.tsx";
+import { ThemedGlobalStyle } from "./style/ThemedGlobalStyle.tsx";
 import App from "./App.tsx";
 import { DescriptionPageProvider } from "./context/HomeContext/DescriptionPageContext/index.tsx";
+import { ThemeProvider } from "./context/Theme/theme.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <GlobalStyle />
-    <DescriptionPageProvider>
-      <App />
-    </DescriptionPageProvider>
+    <ThemeProvider>
+      <ThemedGlobalStyle />
+      <DescriptionPageProvider>
+        <App />
+      </DescriptionPageProvider>
+    </ThemeProvider>
   </StrictMode>
 );

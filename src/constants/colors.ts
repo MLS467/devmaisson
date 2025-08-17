@@ -1,4 +1,4 @@
-export const palette = {
+export const lightPalette = {
   background: "#fcfcfc",
   fontPrimary: "#2a313c",
   // fontSeconry: "#b4bcc4",
@@ -7,10 +7,12 @@ export const palette = {
   blueDefault: "#2e8dfa",
 };
 
-// export const palette = {
-//   background: "#0f0f10", // fundo quase preto
-//   fontPrimary: "#f5f5f5", // texto principal claro
-//   fontSeconry: "rgba(200, 200, 200, 0.8)", // texto secundário cinza claro
-//   greenDefault: "#57db8e", // mantém o verde vivo
-//   blueDefault: "#2e8dfa", // mantém o azul vivo
-// };
+export const darkPalette = {
+  background: "#0f0f10", // fundo quase preto
+  fontPrimary: "#f5f5f5", // texto principal claro
+  fontSeconry: "rgba(200, 200, 200, 0.8)", // texto secundário cinza claro
+  greenDefault: "#57db8e", // mantém o verde vivo
+  blueDefault: "#2e8dfa", // mantém o azul vivo
+};
+
+export type PaletteType = typeof lightPalette;

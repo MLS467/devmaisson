@@ -1,6 +1,6 @@
 import ButtonDefault from "../../ButtonDefault";
 import { data } from "../../../mocks/DescriptionPageData";
-import { palette } from "../../../constants/colors";
+import { lightPalette } from "../../../constants/colors";
 import { ButtonContainer } from "./style";
 import { LuGithub } from "react-icons/lu";
 import { FiLinkedin } from "react-icons/fi";
@@ -22,7 +22,7 @@ const ButtonWrapper = () => {
         </ButtonDefault>
       </Links>
 
-      <ButtonDefault text={data.button[2]} bgColor={palette.blueDefault}>
+      <ButtonDefault text={data.button[2]} bgColor={lightPalette.blueDefault}>
         <MdOutlineEmail />
       </ButtonDefault>
     </ButtonContainer>
