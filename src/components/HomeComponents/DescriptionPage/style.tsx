@@ -26,6 +26,9 @@ export const DescriptionPageContainer = styled.div`
 export const NameContainer = styled.div`
   h1 {
     font-size: 4rem;
+    height: 4rem !important;
+    min-height: 4rem !important;
+    white-space: pre;
     color: ${palette.fontPrimary};
     font-weight: 700;
   }

@@ -5,17 +5,23 @@ import { ButtonContainer } from "./style";
 import { LuGithub } from "react-icons/lu";
 import { FiLinkedin } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
+import Links from "../Links";
 
 const ButtonWrapper = () => {
   return (
     <ButtonContainer>
-      <ButtonDefault text={data.button[0]}>
-        <LuGithub />
-      </ButtonDefault>
+      <Links link={data.linksButton.github}>
+        <ButtonDefault text={data.button[0]}>
+          <LuGithub />
+        </ButtonDefault>
+      </Links>
 
-      <ButtonDefault text={data.button[1]}>
-        <FiLinkedin />
-      </ButtonDefault>
+      <Links link={data.linksButton.linkedin}>
+        <ButtonDefault text={data.button[1]}>
+          <FiLinkedin />
+        </ButtonDefault>
+      </Links>
+
       <ButtonDefault text={data.button[2]} bgColor={palette.blueDefault}>
         <MdOutlineEmail />
       </ButtonDefault>
