@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   }
 
   body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: ${(props) => props.palette.background};
     color: ${(props) => props.palette.fontPrimary};

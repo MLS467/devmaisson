@@ -1,9 +1,10 @@
-import DescriptionPage from "./components/HomeComponents/DescriptionPage";
 import { AppContainer } from "./style/appStyle";
 import { useContext } from "react";
 import { ThemeContext } from "./context/Theme/themeContext";
 import type { PaletteType } from "./constants/colors";
 import { lightPalette } from "./constants/colors";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
 
 function App() {
   const context = useContext(ThemeContext);
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <AppContainer palette={palette}>
-      <DescriptionPage />
+      <Home />
+      <About />
     </AppContainer>
   );
 }

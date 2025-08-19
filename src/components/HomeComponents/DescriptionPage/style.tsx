@@ -67,7 +67,7 @@ export const DescriptionContainer = styled.div<StyledProps>`
 export const ArrowBackContainer = styled.div`
   position: absolute;
   bottom: 0;
-  padding: 30px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: center;
   width: 100%;
