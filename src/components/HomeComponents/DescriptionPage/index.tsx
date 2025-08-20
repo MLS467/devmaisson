@@ -12,7 +12,7 @@ import { useTheme } from "../../../Hooks/useTheme";
 
 const DescriptionPage = ({ children }: { children: React.ReactNode }) => {
   const { title } = useDescription();
-  const { palette } = useTheme();
+  const { palette, isDark } = useTheme();
 
   return (
     <DescriptionPageContainer palette={palette}>
@@ -21,6 +21,7 @@ const DescriptionPage = ({ children }: { children: React.ReactNode }) => {
       </ThemeToggleWrapper>
       <NameContainer
         palette={palette}
+        isDark={isDark}
         className="titleContainer"
         id="titleContainer"
       >

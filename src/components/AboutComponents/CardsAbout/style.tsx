@@ -13,8 +13,17 @@ export const CardAboutContainer = styled.div<CardContainerProps>`
   gap: 30px;
   padding: 24px 16px;
   flex-direction: row;
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
-    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: 0 0 20px ${({ palette }) => palette.blueDefault}30,
+    0 0 40px ${({ palette }) => palette.greenDefault}20,
+    0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px ${({ palette }) => palette.blueDefault}50,
+      0 0 60px ${({ palette }) => palette.greenDefault}40,
+      0 8px 32px rgba(0, 0, 0, 0.15);
+  }
 
   .iconConteiner {
     display: flex;

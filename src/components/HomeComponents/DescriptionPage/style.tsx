@@ -4,6 +4,7 @@ import { marking } from "../../../style/utilStyle";
 
 interface StyledProps {
   palette: PaletteType;
+  isDark?: boolean;
 }
 
 export const DescriptionPageContainer = styled.div<StyledProps>`
@@ -38,6 +39,8 @@ export const ThemeToggleWrapper = styled.div`
 `;
 
 export const NameContainer = styled.div<StyledProps>`
+  position: relative;
+
   h1 {
     font-size: 4rem;
     height: 4rem !important;
@@ -45,6 +48,64 @@ export const NameContainer = styled.div<StyledProps>`
     white-space: pre;
     color: ${(props) => props.palette.fontPrimary};
     font-weight: 700;
+    position: relative;
+    z-index: 2;
+  }
+
+  ${(props) =>
+    props.isDark &&
+    `
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 200px;
+      height: 200px;
+      background: ${props.palette.blueDefault};
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.6;
+      z-index: 1;
+      animation: pulse1 4s ease-in-out infinite alternate;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      width: 180px;
+      height: 180px;
+      background: ${props.palette.greenDefault};
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.5;
+      z-index: 1;
+      animation: pulse2 3.5s ease-in-out infinite alternate;
+    }
+  `}
+
+  @keyframes pulse1 {
+    0% {
+      transform: translate(-50%, -50%) scale(0.7);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes pulse2 {
+    0% {
+      transform: translate(50%, -50%) scale(0.8);
+      opacity: 0.3;
+    }
+    100% {
+      transform: translate(50%, -50%) scale(1.2);
+      opacity: 0.6;
+    }
   }
 `;
 
