@@ -1,17 +1,15 @@
 import CardsFeatured from "../../components/FeaturedProjectsComponents/CardsFeatured";
+import HeaderPagesDefault from "../../components/HeaderPagesDefault";
 import { data } from "../../mocks/FeaturedProjectsData";
-import {
-  FeaturedProjectsContainer,
-  ProjectsContainer,
-  TitleContainer,
-} from "./style";
+import { FeaturedProjectsContainer, ProjectsContainer } from "./style";
 
 const FeaturedProjects = () => {
   return (
     <FeaturedProjectsContainer>
-      <TitleContainer className="titleContainer">
-        <h1>Projetos em destaque</h1>
-      </TitleContainer>
+      <HeaderPagesDefault
+        title="Projetos em destaque"
+        description="Uma seleção dos meus melhores projetos"
+      />
 
       <ProjectsContainer className="projectsContainer">
         {data.map((project) => (

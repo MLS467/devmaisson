@@ -5,6 +5,7 @@ import {
   databaseTechnologies,
   frontendTechnologies,
   mobileTechnologies,
+  TechTitle,
   testingTechnologies,
   toolsTechnologies,
 } from "../../../mocks/TechnologiesData";
@@ -12,17 +13,19 @@ import { CiServer } from "react-icons/ci";
 import { LiaToolsSolid } from "react-icons/lia";
 import { GrTest } from "react-icons/gr";
 import { useTheme } from "../../../Hooks/useTheme";
-import { CardTechContainer, CardTechTitle, CardTechContent } from "./style";
+import { CardTechContainer, CardTechContent } from "./style";
 import { FaMobileScreenButton } from "react-icons/fa6";
+import HeaderPagesDefault from "../../HeaderPagesDefault";
 
 const ListCardHabilities = () => {
   const { palette } = useTheme();
 
   return (
     <CardTechContainer palette={palette}>
-      <CardTechTitle palette={palette}>
-        <span>Habilidades Técnicas</span>
-      </CardTechTitle>
+      <HeaderPagesDefault
+        title={TechTitle.title}
+        description={TechTitle.subtitle}
+      />
       <CardTechContent>
         <TechHabilities
           Icon={FaCode}

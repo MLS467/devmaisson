@@ -6,6 +6,7 @@ import { lightPalette } from "./constants/colors";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import FeaturedProjects from "./Pages/FeaturedProjects";
+import TimeLine from "./Pages/TimeLine";
 
 function App() {
   const context = useContext(ThemeContext);
@@ -17,6 +18,7 @@ function App() {
       <Home />
       <About />
       <FeaturedProjects />
+      <TimeLine />
     </AppContainer>
   );
 }

@@ -3,6 +3,12 @@ export interface Technology {
   name: string;
 }
 
+export const TechTitle = {
+  title: "Habilidades Técnicas",
+  subtitle:
+    "Principais tecnologias e ferramentas que utilizo no desenvolvimento de projetos.",
+};
+
 export const frontendTechnologies: Technology[] = [
   {
     imagePath:

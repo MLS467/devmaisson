@@ -1,3 +1,8 @@
+export const dataContentAbout = {
+  titleSection: "Sobre Mim",
+  descriptionSection: "Conheça mais sobre minha trajetória",
+};
+
 export const data = [
   {
     title: "Formação",
