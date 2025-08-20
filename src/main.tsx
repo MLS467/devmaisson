@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { ThemedGlobalStyle } from "./style/ThemedGlobalStyle.tsx";
+import { ThemedGlobalStyle } from "./style/ThemedGlobalStyle";
 import App from "./App.tsx";
 import { DescriptionPageProvider } from "./context/HomeContext/DescriptionPageContext/index.tsx";
 import { ThemeProvider } from "./context/Theme/theme.tsx";

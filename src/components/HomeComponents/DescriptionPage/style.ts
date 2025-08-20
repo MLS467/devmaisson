@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { type PaletteType } from "../../../constants/colors";
-import { marking } from "../../../style/utilStyle";
 
 interface StyledProps {
   palette: PaletteType;
@@ -18,7 +17,6 @@ export const DescriptionPageContainer = styled.div<StyledProps>`
   height: 100vh;
   background-color: ${(props) => props.palette.background};
   position: relative;
-  ${marking()}
 
   .descriptionContainer {
     margin: 20px 0;

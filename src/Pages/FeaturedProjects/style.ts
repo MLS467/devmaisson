@@ -11,20 +11,20 @@ export const TitleContainer = styled.div`
   margin-bottom: 32px;
 
   h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 8%;
     text-align: center;
   }
 `;
 
 export const ProjectsContainer = styled.div`
   display: flex;
-  border: 1px solid red;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: 12px;
   width: 100%;
 `;

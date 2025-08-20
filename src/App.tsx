@@ -5,7 +5,7 @@ import type { PaletteType } from "./constants/colors";
 import { lightPalette } from "./constants/colors";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
-import FeaturedProjects from "./Pages/Featured Projects";
+import FeaturedProjects from "./Pages/FeaturedProjects";
 
 function App() {
   const context = useContext(ThemeContext);
