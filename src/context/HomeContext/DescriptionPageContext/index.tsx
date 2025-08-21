@@ -19,10 +19,10 @@ export const DescriptionPageProvider = ({
     typed.current = new Typed(title.current, {
       strings: data.name,
       typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 1000,
-      smartBackspace: true,
+      backSpeed: 30,
+      backDelay: 2000,
       loop: true,
+      smartBackspace: false,
       showCursor: true,
       cursorChar: "|",
     });

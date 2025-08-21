@@ -4,5 +4,5 @@ import { GlobalStyle } from "./globalStyle";
 export const ThemedGlobalStyle = () => {
   const { palette } = useTheme();
 
-  return <GlobalStyle palette={palette} />;
+  return <GlobalStyle $palette={palette} />;
 };

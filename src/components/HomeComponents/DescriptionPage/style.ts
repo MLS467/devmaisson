@@ -16,7 +16,7 @@ export const DescriptionPageContainer = styled.div<StyledProps>`
   width: 100%;
   height: 100vh;
   background-color: ${(props) => props.palette.background};
-  position: relative;
+  padding: 0 20px;
 
   .descriptionContainer {
     margin: 20px 0;
@@ -25,7 +25,24 @@ export const DescriptionPageContainer = styled.div<StyledProps>`
       color: ${(props) => props.palette.fontSeconry};
       text-align: center;
       max-width: 600px;
+      line-height: 1.6;
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    gap: 12px;
+
+    .descriptionContainer span {
+      font-size: 14px;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 10px;
   }
 `;
 
@@ -34,20 +51,82 @@ export const ThemeToggleWrapper = styled.div`
   top: 20px;
   right: 20px;
   z-index: 10;
+
+  @media (max-width: 480px) {
+    top: 15px;
+    right: 15px;
+  }
 `;
 
 export const NameContainer = styled.div<StyledProps>`
   position: relative;
+  text-align: center;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   h1 {
     font-size: 4rem;
     height: 4rem !important;
     min-height: 4rem !important;
-    white-space: pre;
+    white-space: nowrap;
     color: ${(props) => props.palette.fontPrimary};
     font-weight: 700;
     position: relative;
     z-index: 2;
+    margin: 0;
+    line-height: 1;
+    display: inline-block;
+  }
+
+  .typed-cursor {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 400;
+    opacity: 1;
+    animation: blink 1s infinite;
+    line-height: 1;
+    font-size: inherit;
+    margin-left: 0;
+  }
+
+  @keyframes blink {
+    0%,
+    50% {
+      opacity: 1;
+    }
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 3rem;
+
+    h1 {
+      font-size: 3rem;
+      height: 3rem !important;
+      min-height: 3rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    height: 2.5rem;
+
+    h1 {
+      font-size: 2.5rem;
+      height: 2.5rem !important;
+      min-height: 2.5rem !important;
+    }
+  }
+
+  @media (max-width: 360px) {
+    h1 {
+      font-size: 2rem;
+      min-height: 2rem !important;
+    }
   }
 
   ${(props) =>
@@ -108,18 +187,51 @@ export const NameContainer = styled.div<StyledProps>`
 `;
 
 export const DeveloperContainer = styled.div<StyledProps>`
+  text-align: center;
+
   span {
     font-size: 1.8rem;
     color: ${(props) => props.palette.fontSeconry};
+  }
+
+  @media (max-width: 768px) {
+    span {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    span {
+      font-size: 1.3rem;
+    }
   }
 `;
 
 export const DescriptionContainer = styled.div<StyledProps>`
   width: 60%;
   text-align: center;
+  max-width: 600px;
+
   span {
     font-size: 1.35rem;
     color: ${(props) => props.palette.fontSeconry};
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    width: 80%;
+
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 90%;
+
+    span {
+      font-size: 1rem;
+    }
   }
 `;
 

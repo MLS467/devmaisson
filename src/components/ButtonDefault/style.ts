@@ -31,7 +31,7 @@ export const ButtonDefaultStyled = styled.button<ButtonDefaultStyledProps>`
     background-color: ${({ $bgColor }) =>
       $bgColor ? $bgColor : lightPalette.greenDefault};
     color: white;
-    border: 1px solid ${lightPalette.blueDefault};
+    border: 1px solid ${lightPalette.greenDefault};
     box-shadow: ${lightPalette.greenDefault} 0px 5px 15px;
   }
 `;

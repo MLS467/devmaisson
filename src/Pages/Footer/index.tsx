@@ -1,3 +1,4 @@
+import { BsWhatsapp } from "react-icons/bs";
 import { useTheme } from "../../Hooks/useTheme";
 import {
   FooterContainer,
@@ -8,16 +9,17 @@ import {
   SocialLink,
   Divider,
 } from "./style";
+import { data } from "../../mocks/DescriptionPageData";
 
 const Footer = () => {
   const { palette } = useTheme();
 
   return (
-    <FooterContainer palette={palette}>
-      <Divider palette={palette} />
+    <FooterContainer $palette={palette}>
+      <Divider $palette={palette} />
 
       <FooterContent>
-        <FooterText palette={palette}>
+        <FooterText $palette={palette}>
           Desenvolvido com{" "}
           <span style={{ color: palette.greenDefault }}>♥</span> por Maisson
           Leal da Silva
@@ -25,7 +27,7 @@ const Footer = () => {
 
         <SocialLinks>
           <SocialLink
-            palette={palette}
+            $palette={palette}
             href="https://github.com/MLS467"
             target="_blank"
             rel="noopener noreferrer"
@@ -36,7 +38,7 @@ const Footer = () => {
           </SocialLink>
 
           <SocialLink
-            palette={palette}
+            $palette={palette}
             href="https://www.linkedin.com/in/maisson-leal-da-silva/"
             target="_blank"
             rel="noopener noreferrer"
@@ -46,14 +48,17 @@ const Footer = () => {
             </svg>
           </SocialLink>
 
-          <SocialLink palette={palette} href="mailto:contato@maisson.dev">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4M20,8L12,13L4,8V6L12,11L20,6V8Z" />
-            </svg>
+          <SocialLink
+            $palette={palette}
+            href={data.linksButton.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <BsWhatsapp />
           </SocialLink>
         </SocialLinks>
 
-        <FooterCopyright palette={palette}>
+        <FooterCopyright $palette={palette}>
           © {new Date().getFullYear()} Maisson Leal da Silva. Todos os direitos
           reservados.
         </FooterCopyright>

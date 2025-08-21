@@ -8,6 +8,7 @@ interface StyledProps {
 export const TechCard = styled.div<StyledProps>`
   display: flex;
   width: 30%;
+  min-width: 300px;
   flex-direction: column;
   background: ${({ palette }) => palette.background};
   border-radius: 16px;
@@ -19,6 +20,21 @@ export const TechCard = styled.div<StyledProps>`
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 1024px) {
+    width: 45%;
+    min-width: 250px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    min-width: auto;
+    padding: 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 16px;
   }
 `;
 
@@ -49,12 +65,20 @@ export const TitleContainer = styled.div<StyledProps>`
 `;
 
 export const TechGrid = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
   align-items: flex-start;
-  flex-direction: row;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 8px;
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const TechItem = styled.div<StyledProps>`
@@ -69,16 +93,28 @@ export const TechItem = styled.div<StyledProps>`
   gap: 6px;
   transition: all 0.3s ease;
   cursor: pointer;
-  width: 120px;
+  width: 100%;
+  max-width: 120px;
   height: 120px;
   box-sizing: border-box;
 
   &:hover {
     transform: scale(1.05);
-    /* box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); */
     box-shadow: ${({ palette }) => palette.greenDefault} 0px 5px 15px;
-
     border-color: ${({ palette }) => palette.blueDefault};
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 100px;
+    padding: 12px;
+    gap: 4px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 80px;
+    height: 80px;
+    padding: 8px;
   }
 
   img {
@@ -89,6 +125,16 @@ export const TechItem = styled.div<StyledProps>`
     flex-shrink: 0;
     display: block;
     margin: 0 auto;
+
+    @media (max-width: 768px) {
+      width: 32px;
+      height: 32px;
+    }
+
+    @media (max-width: 480px) {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   &:hover img {

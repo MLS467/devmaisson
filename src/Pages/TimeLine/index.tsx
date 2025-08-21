@@ -4,7 +4,6 @@ import TimeLineComponents from "../../components/TimeLineComponents";
 import { timelineData } from "../../mocks/TimelineData";
 import HeaderPagesDefault from "../../components/HeaderPagesDefault/index.tsx";
 
-// Ícones para cada item da timeline
 const timelineIcons = [
   <svg viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V21C3 22.1 3.89 23 5 23H19C20.1 23 21 22.1 21 21V9H21ZM19 21H5V3H13V9H19V21Z" />
@@ -24,7 +23,7 @@ const TimeLine = () => {
   const { palette } = useTheme();
 
   return (
-    <TimelineContainer palette={palette}>
+    <TimelineContainer $palette={palette}>
       <HeaderPagesDefault
         title="Minha Trajetória"
         description="Acompanhe minha jornada profissional e acadêmica"

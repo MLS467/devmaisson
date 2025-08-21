@@ -4,8 +4,8 @@ import { lightPalette } from "../../../constants/colors";
 import { ButtonContainer } from "./style";
 import { LuGithub } from "react-icons/lu";
 import { FiLinkedin } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
 import Links from "../Links";
+import { BsWhatsapp } from "react-icons/bs";
 
 const ButtonWrapper = () => {
   return (
@@ -22,9 +22,11 @@ const ButtonWrapper = () => {
         </ButtonDefault>
       </Links>
 
-      <ButtonDefault text={data.button[2]} bgColor={lightPalette.blueDefault}>
-        <MdOutlineEmail />
-      </ButtonDefault>
+      <Links link={data.linksButton.whatsapp}>
+        <ButtonDefault text={data.button[2]} bgColor={lightPalette.blueDefault}>
+          <BsWhatsapp />
+        </ButtonDefault>
+      </Links>
     </ButtonContainer>
   );
 };

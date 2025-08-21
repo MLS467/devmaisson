@@ -1,5 +1,3 @@
-// ...existing code...
-
 import styled from "styled-components";
 import type { PaletteType } from "../../../constants/colors";
 
@@ -41,6 +39,7 @@ export const CardsFeaturedContainer = styled.div<CardContainerProps>`
   gap: 1.2rem;
   transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
     0 0 20px ${({ palette }) => palette.blueDefault}30,
@@ -59,13 +58,25 @@ export const CardsFeaturedContainer = styled.div<CardContainerProps>`
       visibility: visible;
     }
 
-    /* Expandir descrição no hover */
     ${DescriptionContainer} {
       max-height: none;
       -webkit-line-clamp: unset;
       display: block;
       overflow: visible;
     }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 1.2rem;
+    gap: 1rem;
+    min-height: 250px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    gap: 0.8rem;
+    min-height: 220px;
   }
 `;
 

@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { type PaletteType } from "../constants/colors";
 
 interface GlobalStyleProps {
-  palette: PaletteType;
+  $palette: PaletteType;
 }
 
 export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
@@ -15,8 +15,8 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
   body {
     width: 100%;
     height: 100vh;
-    background-color: ${(props) => props.palette.background};
-    color: ${(props) => props.palette.fontPrimary};
+    background-color: ${(props) => props.$palette.background};
+    color: ${(props) => props.$palette.fontPrimary};
     font-family: Inter, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

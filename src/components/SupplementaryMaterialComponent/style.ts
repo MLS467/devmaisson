@@ -17,6 +17,7 @@ export const SupplementaryMaterialContainer = styled.div<{
   border-radius: 16px;
   transition: all 0.3s ease;
   max-width: 400px;
+  width: 100%;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
@@ -24,6 +25,15 @@ export const SupplementaryMaterialContainer = styled.div<{
     transform: translateY(-5px);
     box-shadow: 0 10px 30px ${({ palette }) => palette.fontSeconry}20;
     border-color: ${({ palette }) => palette.blueDefault}40;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.2rem;
   }
 `;
 

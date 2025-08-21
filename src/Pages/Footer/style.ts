@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { PaletteType } from "../../constants/colors";
 
-export const FooterContainer = styled.footer<{ palette: PaletteType }>`
+export const FooterContainer = styled.footer<{ $palette: PaletteType }>`
   margin-top: 4rem;
   width: calc(100vw - 9px);
   position: relative;
@@ -10,19 +10,19 @@ export const FooterContainer = styled.footer<{ palette: PaletteType }>`
   margin-left: -50vw;
   margin-right: -50vw;
   padding: 2rem 0;
-  background: ${({ palette }) =>
-    palette.background === "#0f0f10"
+  background: ${({ $palette }) =>
+    $palette.background === "#0f0f10"
       ? "rgba(255, 255, 255, 0.02)"
       : "rgba(0, 0, 0, 0.03)"};
 `;
 
-export const Divider = styled.div<{ palette: PaletteType }>`
+export const Divider = styled.div<{ $palette: PaletteType }>`
   width: 100%;
   height: 1px;
   background: linear-gradient(
     90deg,
     transparent,
-    ${({ palette }) => palette.fontSeconry}30,
+    ${({ $palette }) => $palette.fontSeconry}30,
     transparent
   );
   margin-bottom: 2rem;
@@ -42,10 +42,10 @@ export const FooterContent = styled.div`
   }
 `;
 
-export const FooterText = styled.h3<{ palette: PaletteType }>`
+export const FooterText = styled.h3<{ $palette: PaletteType }>`
   font-size: 1.125rem;
   font-weight: 500;
-  color: ${({ palette }) => palette.fontPrimary};
+  color: ${({ $palette }) => $palette.fontPrimary};
   margin: 0;
   display: flex;
   align-items: center;
@@ -62,18 +62,18 @@ export const SocialLinks = styled.div`
   gap: 1rem;
 `;
 
-export const SocialLink = styled.a<{ palette: PaletteType }>`
+export const SocialLink = styled.a<{ $palette: PaletteType }>`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: ${({ palette }) =>
-    palette.background === "#0f0f10"
+  background: ${({ $palette }) =>
+    $palette.background === "#0f0f10"
       ? "rgba(255, 255, 255, 0.05)"
       : "rgba(0, 0, 0, 0.05)"};
-  color: ${({ palette }) => palette.fontSeconry};
+  color: ${({ $palette }) => $palette.fontSeconry};
   text-decoration: none;
   transition: all 0.3s ease;
 
@@ -83,14 +83,14 @@ export const SocialLink = styled.a<{ palette: PaletteType }>`
   }
 
   &:hover {
-    color: ${({ palette }) => palette.blueDefault};
-    background: ${({ palette }) => palette.blueDefault}15;
+    color: ${({ $palette }) => $palette.blueDefault};
+    background: ${({ $palette }) => $palette.blueDefault}15;
     transform: translateY(-2px);
   }
 
   &:nth-child(1):hover {
-    color: ${({ palette }) => palette.fontPrimary};
-    background: ${({ palette }) => palette.fontPrimary}15;
+    color: ${({ $palette }) => $palette.fontPrimary};
+    background: ${({ $palette }) => $palette.fontPrimary}15;
   }
 
   &:nth-child(2):hover {
@@ -99,14 +99,14 @@ export const SocialLink = styled.a<{ palette: PaletteType }>`
   }
 
   &:nth-child(3):hover {
-    color: ${({ palette }) => palette.greenDefault};
-    background: ${({ palette }) => palette.greenDefault}15;
+    color: ${({ $palette }) => $palette.greenDefault};
+    background: ${({ $palette }) => $palette.greenDefault}15;
   }
 `;
 
-export const FooterCopyright = styled.p<{ palette: PaletteType }>`
+export const FooterCopyright = styled.p<{ $palette: PaletteType }>`
   font-size: 0.925rem;
-  color: ${({ palette }) => palette.fontSeconry};
+  color: ${({ $palette }) => $palette.fontSeconry};
   margin: 0;
   opacity: 0.8;
 

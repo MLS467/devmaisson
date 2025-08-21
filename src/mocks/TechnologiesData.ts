@@ -131,17 +131,17 @@ export const toolsTechnologies: Technology[] = [
 
 export const testingTechnologies: Technology[] = [
   {
-    imagePath: "https://iconape.com/wp-content/files/gj/370774/svg/370774.svg", // ícone do Cypress
+    imagePath: "https://iconape.com/wp-content/files/gj/370774/svg/370774.svg",
     name: "Cypress",
   },
   {
     imagePath:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", // usando ícone do PHP
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
     name: "PHPUnit",
   },
   {
     imagePath:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg", // Selenium
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg",
     name: "Selenium",
   },
 ];

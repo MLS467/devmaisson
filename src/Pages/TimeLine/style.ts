@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import type { PaletteType } from "../../constants/colors";
 
-export const TimelineContainer = styled.div<{ palette: PaletteType }>`
+export const TimelineContainer = styled.div<{ $palette: PaletteType }>`
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
@@ -15,14 +15,14 @@ export const TimelineContainer = styled.div<{ palette: PaletteType }>`
   .timelineMainTitle {
     font-size: 2.5rem;
     font-weight: 700;
-    color: ${({ palette }) => palette.fontPrimary};
+    color: ${({ $palette }) => $palette.fontPrimary};
     margin-bottom: 1rem;
   }
 
   .timelineMainDescription {
     padding: 1%;
     font-size: 1.125rem;
-    color: ${({ palette }) => palette.fontSeconry};
+    color: ${({ $palette }) => $palette.fontSeconry};
     margin: 0;
     max-width: 600px;
     margin: 0 auto;

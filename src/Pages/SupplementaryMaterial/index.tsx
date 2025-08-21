@@ -12,16 +12,15 @@ export const SupplementaryMaterial = () => {
     const url = import.meta.env.VITE_DOWNLOAD_CURRICULO;
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Currículo_Completo_Maisson.pdf"; // nome do arquivo ao baixar
+    link.download = "Currículo_Completo_Maisson.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const handleOpenPDF = () => {
-    const url =
-      "https://drive.google.com/file/d/1tjYTaOLw-2_izyAliVLDBlAP4NHyJ4fq/view?usp=drive_link";
-    window.open(url, "_blank"); // abre em nova aba
+    const url = import.meta.env.VITE_OPEN_CURRICULO;
+    window.open(url, "_blank");
   };
 
   return (

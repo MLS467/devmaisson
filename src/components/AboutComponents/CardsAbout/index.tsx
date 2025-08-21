@@ -12,7 +12,7 @@ const CardsAbout = ({ icon, title, description }: CardAboutProps) => {
   const { palette } = useTheme();
 
   return (
-    <CardAboutContainer palette={palette}>
+    <CardAboutContainer $palette={palette}>
       <div className="iconConteiner">{icon}</div>
 
       <div className="titleCardConteiner">

@@ -15,6 +15,16 @@ export const CardTechContainer = styled.div<StyledProps>`
   align-items: center;
   flex-direction: column;
   box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    margin: 60px auto 0 auto;
+    padding: 0 2%;
+  }
+
+  @media (max-width: 480px) {
+    margin: 40px auto 0 auto;
+    padding: 0 1%;
+  }
 `;
 
 export const CardTechTitle = styled.div<StyledProps>`

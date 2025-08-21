@@ -17,7 +17,7 @@ function App() {
   const palette: PaletteType = context?.palette || lightPalette;
 
   return (
-    <AppContainer palette={palette}>
+    <AppContainer $palette={palette}>
       <Home />
       <About />
       <FeaturedProjects />
