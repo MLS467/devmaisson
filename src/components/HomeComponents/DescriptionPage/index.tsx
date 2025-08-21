@@ -25,7 +25,9 @@ const DescriptionPage = ({ children }: { children: React.ReactNode }) => {
         className="titleContainer"
         id="titleContainer"
       >
-        <h1 ref={title}>{data.name}</h1>
+        <h1 id="typed-title" ref={title}>
+          {data.name}
+        </h1>
       </NameContainer>
       <DeveloperContainer palette={palette}>
         <span>{data.developer}</span>

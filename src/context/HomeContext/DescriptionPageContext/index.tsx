@@ -16,7 +16,9 @@ export const DescriptionPageProvider = ({
   useEffect(() => {
     if (typed.current) typed.current.destroy();
 
-    typed.current = new Typed(title.current, {
+    title.current.innerHTML = "";
+
+    typed.current = new Typed("#typed-title", {
       strings: data.name,
       typeSpeed: 25, // Velocidade mais fluida
       backSpeed: 30, // Velocidade de apagamento mais rápida
