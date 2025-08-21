@@ -24,7 +24,7 @@ export const data = [
   {
     id: btoa((new Date().getTime() + 2).toString()),
     mainIcon: TbCircleDottedLetterM,
-    url: "https://github.com/MLS467/portfolio",
+    url: "https://github.com/MLS467/devmaisson.git",
     title: "Meu Portfólio Pessoal",
     description:
       "Aplicação web desenvolvida para apresentar meus projetos, habilidades e experiências. O front-end foi construído com React e TypeScript, focando em performance, acessibilidade e design responsivo. A API em Laravel gerencia dados dinâmicos como lista de projetos e formulários de contato. Este portfólio reflete minha identidade profissional e capacidade técnica como desenvolvedor full stack.",

@@ -34,7 +34,7 @@ export const timelineData: Omit<TimelineItem, "icon">[] = [
     title: "Tecnologia em Sistemas para Internet",
     subtitle: "IFSUL – Campus Pelotas",
     description:
-      "Graduação em andamento com conclusão prevista para 2025. Curso avaliado com nota máxima (5) pelo MEC. Durante a formação, adquiri conhecimentos em lógica de programação, algoritmos, modelagem de dados, bancos de dados, engenharia de software, desenvolvimento de sistemas web e mobile, IoT e redes. A experiência acadêmica tem fortalecido minhas habilidades técnicas e contribuído para meu crescimento pessoal e profissional.",
+      "Graduação em andamento com conclusão prevista para 2026. Curso avaliado com nota máxima (5) pelo MEC. Durante a formação, adquiri conhecimentos em lógica de programação, algoritmos, modelagem de dados, bancos de dados, engenharia de software, desenvolvimento de sistemas web e mobile, IoT e redes. A experiência acadêmica tem fortalecido minhas habilidades técnicas e contribuído para meu crescimento pessoal e profissional.",
     dates: "2023 - 2026 (previsto)",
     local: "Pelotas, RS",
   },
