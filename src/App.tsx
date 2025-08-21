@@ -7,6 +7,9 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import FeaturedProjects from "./Pages/FeaturedProjects";
 import TimeLine from "./Pages/TimeLine";
+import SupplementaryMaterial from "./Pages/SupplementaryMaterial";
+import LetsTalk from "./Pages/LetsTalk";
+import Footer from "./Pages/Footer";
 
 function App() {
   const context = useContext(ThemeContext);
@@ -19,6 +22,9 @@ function App() {
       <About />
       <FeaturedProjects />
       <TimeLine />
+      <SupplementaryMaterial />
+      <LetsTalk />
+      <Footer />
     </AppContainer>
   );
 }

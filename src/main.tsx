@@ -5,6 +5,8 @@ import App from "./App.tsx";
 import { DescriptionPageProvider } from "./context/HomeContext/DescriptionPageContext/index.tsx";
 import { ThemeProvider } from "./context/Theme/theme.tsx";
 
+document.title = import.meta.env.VITE_APP_NAME;
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
