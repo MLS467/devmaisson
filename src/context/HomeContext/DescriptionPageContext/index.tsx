@@ -18,13 +18,19 @@ export const DescriptionPageProvider = ({
 
     typed.current = new Typed(title.current, {
       strings: data.name,
-      typeSpeed: 50,
-      backSpeed: 30,
-      backDelay: 2000,
+      typeSpeed: 25, // Velocidade mais fluida
+      backSpeed: 30, // Velocidade de apagamento mais rápida
+      backDelay: 2000, // Mais tempo antes de apagar
+      // startDelay: 500, // Delay inicial para melhor experiência
+      smartBackspace: false, // Apaga tudo para manter tamanho fixo
       loop: true,
-      smartBackspace: false,
       showCursor: true,
-      cursorChar: "|",
+      cursorChar: "|", // Cursor personalizado
+      autoInsertCss: true,
+      fadeOut: false, // Remove fade para transição mais fluida
+      shuffle: false, // Mantém ordem das strings
+      bindInputFocusEvents: false, // Melhora performance
+      contentType: "html", // Permite HTML se necessário
     });
 
     return () => typed.current?.destroy();

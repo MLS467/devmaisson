@@ -83,12 +83,24 @@ export const NameContainer = styled.div<StyledProps>`
   .typed-cursor {
     display: inline-block;
     vertical-align: middle;
-    font-weight: 400;
+    font-weight: 700;
     opacity: 1;
-    animation: blink 1s infinite;
+    animation: typewriter-blink 1.2s infinite;
     line-height: 1;
     font-size: inherit;
-    margin-left: 0;
+    margin-left: 2px;
+    color: ${(props) => props.palette.blueDefault};
+  }
+
+  @keyframes typewriter-blink {
+    0%,
+    45% {
+      opacity: 1;
+    }
+    46%,
+    100% {
+      opacity: 0;
+    }
   }
 
   @keyframes blink {
