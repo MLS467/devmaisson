@@ -221,4 +221,4 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 ---
 
-**Desenvolvido com ❤️ por [Maisson Lima](https://github.com/MLS467)**
+**Desenvolvido com ❤️ por [Maisson Leal da Silva](https://github.com/MLS467)**
