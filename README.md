@@ -211,8 +211,8 @@ Contribuições são bem-vindas! Para contribuir:
 
 ## 📞 Contato
 
-- **Email**: [maisson.lima.dev@gmail.com](mailto:maisson.lima.dev@gmail.com)
-- **LinkedIn**: [Maisson Lima](https://www.linkedin.com/in/maisson-4bb5b424b/)
+- **Email**: [maisson.ifsul@gmail.com](mailto:maisson.ifsul@gmail.com)
+- **LinkedIn**: [Maisson Leal da Silva](https://www.linkedin.com/in/maisson-leal-da-silva-373633288)
 - **GitHub**: [MLS467](https://github.com/MLS467)
 
 ## 📄 Licença
