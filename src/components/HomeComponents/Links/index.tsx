@@ -8,7 +8,12 @@ type LinkProps = {
 
 const Links = ({ children, link }: LinkProps) => {
   return (
-    <LinkStyle href={link} target="_blank" rel="noopener noreferrer">
+    <LinkStyle
+      style={{ display: "contents" }}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {children}
     </LinkStyle>
   );

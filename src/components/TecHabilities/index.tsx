@@ -1,10 +1,12 @@
 import type { IconType } from "react-icons";
 import { useTheme } from "../../Hooks/useTheme";
 import { TechCard, TitleContainer, TechGrid, TechItem } from "./style";
+import Links from "../HomeComponents/Links";
 
 interface Technology {
   name: string;
   imagePath: string;
+  projectLink?: string;
 }
 
 interface TechProps {
@@ -25,10 +27,12 @@ const TechHabilities = ({ Icon, titleTec, technologies }: TechProps) => {
 
       <TechGrid>
         {technologies.map((tech, index) => (
-          <TechItem key={`tech${index}`} palette={palette}>
-            <img src={tech.imagePath} alt={tech.name} />
-            <span>{tech.name}</span>
-          </TechItem>
+          <Links link={tech.projectLink ?? "#"} key={`link${index}`}>
+            <TechItem palette={palette} className="tech-item">
+              <img src={tech.imagePath} alt={tech.name} />
+              <span>{tech.name}</span>
+            </TechItem>
+          </Links>
         ))}
       </TechGrid>
     </TechCard>
