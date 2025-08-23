@@ -52,6 +52,11 @@ export const ThemeToggleWrapper = styled.div`
   right: 20px;
   z-index: 10;
 
+  @media (max-width: 768px) {
+    top: 2px;
+    right: 2px;
+  }
+
   @media (max-width: 480px) {
     top: 15px;
     right: 15px;
@@ -115,10 +120,9 @@ export const NameContainer = styled.div<StyledProps>`
   }
 
   @media (max-width: 768px) {
-    height: 3rem;
-
+    height: 2rem;
     h1 {
-      font-size: 3rem;
+      font-size: 1.5rem !important;
       height: 3rem !important;
       min-height: 3rem !important;
     }
@@ -208,7 +212,7 @@ export const DeveloperContainer = styled.div<StyledProps>`
 
   @media (max-width: 768px) {
     span {
-      font-size: 1.5rem;
+      font-size: 1rem !important;
     }
   }
 
@@ -234,7 +238,7 @@ export const DescriptionContainer = styled.div<StyledProps>`
     width: 80%;
 
     span {
-      font-size: 1.2rem;
+      font-size: 0.8rem !important;
     }
   }
 

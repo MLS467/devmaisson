@@ -11,18 +11,21 @@ export const ButtonContainer = styled.div`
   gap: 16px;
 
   @media (max-width: 768px) {
-    width: 60%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     gap: 12px;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 320px) {
     width: 80%;
     flex-direction: column;
     gap: 16px;
     margin-top: 4%;
   }
 
-  @media (max-width: 360px) {
+  @media (max-width: 280px) {
     width: 90%;
   }
 `;

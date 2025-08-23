@@ -27,4 +27,13 @@ export const ThemeButton = styled.button<StyledProps>`
   svg {
     font-size: 20px;
   }
+
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+
+    svg {
+      font-size: 16px;
+    }
+  }
 `;

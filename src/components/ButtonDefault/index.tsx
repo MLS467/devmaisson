@@ -1,18 +1,19 @@
 import React from "react";
 import { ButtonDefaultStyled } from "./style";
+import { type PaletteType } from "../../constants/colors";
 
 interface btn {
   text: string;
   children?: React.ReactNode;
   bgColor?: string;
+  palette?: PaletteType;
 }
 
-const ButtonDefault = ({ text, children, bgColor }: btn) => {
+const ButtonDefault = ({ text, children, bgColor, palette }: btn) => {
   return (
-    <ButtonDefaultStyled $bgColor={bgColor}>
+    <ButtonDefaultStyled $bgColor={bgColor} $palette={palette}>
       {children}
-
-      {text}
+      <div className="textContainerButton">{text}</div>
     </ButtonDefaultStyled>
   );
 };
