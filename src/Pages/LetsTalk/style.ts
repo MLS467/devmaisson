@@ -6,6 +6,11 @@ export const LetsTalkContainer = styled.div<{ $palette: PaletteType }>`
   width: 90%;
   margin: 0 auto;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    padding: 1rem;
+  }
 `;
 
 export const ContentContainer = styled.div`
@@ -16,7 +21,8 @@ export const ContentContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
   }
 `;
 
@@ -113,7 +119,13 @@ export const SocialButton = styled.button<{ $palette: PaletteType }>`
   }
 `;
 
-export const RightSection = styled.div``;
+export const RightSection = styled.div`
+  @media (max-width: 768px) {
+    order: -1; /* Coloca o formulário acima dos contatos no mobile */
+    width: 100%;
+    max-width: none;
+  }
+`;
 
 export const FormContainer = styled.form<{ $palette: PaletteType }>`
   background: ${({ $palette }) =>
@@ -123,6 +135,20 @@ export const FormContainer = styled.form<{ $palette: PaletteType }>`
   border: 1px solid ${({ $palette }) => $palette.fontSeconry}20;
   border-radius: 16px;
   padding: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    background: ${({ $palette }) =>
+      $palette.background === "#0f0f10"
+        ? "rgba(255, 255, 255, 0.05)"
+        : "rgba(0, 0, 0, 0.03)"};
+    border: 1px solid ${({ $palette }) => $palette.fontSeconry}40;
+    box-shadow: 0 8px 32px ${({ $palette }) => $palette.fontSeconry}15;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
 `;
 
 export const FormTitle = styled.h3<{ $palette: PaletteType }>`
@@ -130,12 +156,23 @@ export const FormTitle = styled.h3<{ $palette: PaletteType }>`
   font-weight: 600;
   color: ${({ $palette }) => $palette.fontPrimary};
   margin: 0 0 2rem 0;
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    margin: 0 0 1.75rem 0;
+    text-align: center;
+  }
 `;
 
 export const FormGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
@@ -144,6 +181,10 @@ export const FormGrid = styled.div`
 
 export const FormGroup = styled.div`
   margin-bottom: 1.5rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.25rem;
+  }
 `;
 
 export const Label = styled.label<{ $palette: PaletteType }>`
@@ -152,6 +193,11 @@ export const Label = styled.label<{ $palette: PaletteType }>`
   font-weight: 500;
   color: ${({ $palette }) => $palette.fontPrimary};
   margin-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
 `;
 
 export const Input = styled.input<{ $palette: PaletteType }>`
@@ -168,14 +214,30 @@ export const Input = styled.input<{ $palette: PaletteType }>`
   transition: all 0.3s ease;
   box-sizing: border-box;
 
+  @media (max-width: 768px) {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    background: ${({ $palette }) =>
+      $palette.background === "#0f0f10"
+        ? "rgba(255, 255, 255, 0.08)"
+        : "rgba(0, 0, 0, 0.05)"};
+    border: 1px solid ${({ $palette }) => $palette.fontSeconry}40;
+  }
+
   &::placeholder {
     color: ${({ $palette }) => $palette.fontSeconry};
+    opacity: 0.8;
   }
 
   &:focus {
     outline: none;
     border-color: ${({ $palette }) => $palette.blueDefault};
     box-shadow: 0 0 0 3px ${({ $palette }) => $palette.blueDefault}20;
+    background: ${({ $palette }) =>
+      $palette.background === "#0f0f10"
+        ? "rgba(255, 255, 255, 0.08)"
+        : "rgba(0, 0, 0, 0.02)"};
   }
 `;
 
@@ -196,41 +258,30 @@ export const TextArea = styled.textarea<{ $palette: PaletteType }>`
   transition: all 0.3s ease;
   box-sizing: border-box;
 
+  @media (max-width: 768px) {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+    border-radius: 12px;
+    min-height: 120px;
+    background: ${({ $palette }) =>
+      $palette.background === "#0f0f10"
+        ? "rgba(255, 255, 255, 0.08)"
+        : "rgba(0, 0, 0, 0.05)"};
+    border: 1px solid ${({ $palette }) => $palette.fontSeconry}40;
+  }
+
   &::placeholder {
     color: ${({ $palette }) => $palette.fontSeconry};
+    opacity: 0.8;
   }
 
   &:focus {
     outline: none;
     border-color: ${({ $palette }) => $palette.blueDefault};
     box-shadow: 0 0 0 3px ${({ $palette }) => $palette.blueDefault}20;
-  }
-`;
-
-export const SubmitButton = styled.button<{ $palette: PaletteType }>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: ${({ $palette }) => $palette.blueDefault};
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  &:hover {
-    background: ${({ $palette }) => $palette.blueDefault}dd;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px ${({ $palette }) => $palette.blueDefault}40;
+    background: ${({ $palette }) =>
+      $palette.background === "#0f0f10"
+        ? "rgba(255, 255, 255, 0.08)"
+        : "rgba(0, 0, 0, 0.02)"};
   }
 `;

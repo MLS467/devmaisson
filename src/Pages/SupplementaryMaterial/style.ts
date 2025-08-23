@@ -29,4 +29,33 @@ export const SpeakMe = styled.div`
   justify-content: center;
   align-items: center;
   padding: 2rem;
+
+  /* Controle do tamanho do botão apenas na versão desktop */
+  @media (min-width: 1024px) {
+    button {
+      max-width: 200px;
+      width: auto;
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+  }
+
+  /* Para tablet (768px) mantém o comportamento padrão */
+  @media (max-width: 768px) and (min-width: 481px) {
+    padding: 1.5rem;
+
+    button {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1.5rem;
+
+    button {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
 `;

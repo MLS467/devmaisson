@@ -3,13 +3,14 @@ import type { PaletteType } from "../../constants/colors";
 
 export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
   display: flex;
-  position: relative;
   margin-bottom: 3rem;
+  position: relative;
+  align-items: flex-start;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
-    padding: 2rem 1rem;
+    justify-content: center;
     margin-bottom: 2rem;
     background: ${({ palette }) => palette.background};
     border: 1px solid ${({ palette }) => `${palette.fontSeconry}30`};
@@ -78,11 +79,9 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
 
   .timelineContent {
     flex: 1;
-    padding-left: 1rem;
 
     @media (max-width: 768px) {
-      padding: 0;
-      text-align: center;
+      text-align: justify;
       width: 100%;
       max-width: 100%;
     }

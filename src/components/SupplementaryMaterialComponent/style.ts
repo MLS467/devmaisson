@@ -87,8 +87,21 @@ export const ButtonsContainer = styled.div`
   width: 100%;
   max-width: 280px;
 
-  @media (min-width: 480px) {
+  @media (min-width: 769px) {
     flex-direction: row;
     justify-content: center;
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.75rem;
+    max-width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 1rem;
   }
 `;

@@ -6,6 +6,9 @@ interface AppContainerProps {
 }
 
 export const AppContainer = styled.div<AppContainerProps>`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: ${({ $palette }) => $palette.background};
   padding: 0 8%;
   min-height: 100vh;

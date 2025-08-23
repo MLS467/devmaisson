@@ -14,6 +14,11 @@ export const FooterContainer = styled.footer<{ $palette: PaletteType }>`
     $palette.background === "#0f0f10"
       ? "rgba(255, 255, 255, 0.02)"
       : "rgba(0, 0, 0, 0.03)"};
+
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+  }
 `;
 
 export const Divider = styled.div<{ $palette: PaletteType }>`
@@ -26,6 +31,10 @@ export const Divider = styled.div<{ $palette: PaletteType }>`
     transparent
   );
   margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const FooterContent = styled.div`
@@ -38,7 +47,13 @@ export const FooterContent = styled.div`
   text-align: center;
 
   @media (max-width: 768px) {
+    padding: 0 1.5rem;
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
     padding: 0 1rem;
+    gap: 1rem;
   }
 `;
 
@@ -51,6 +66,12 @@ export const FooterText = styled.h3<{ $palette: PaletteType }>`
   align-items: center;
   gap: 0.5rem;
 
+  @media (max-width: 768px) {
+    font-size: 1.05rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   @media (max-width: 480px) {
     font-size: 1rem;
   }
@@ -60,6 +81,11 @@ export const SocialLinks = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    gap: 1.25rem;
+    justify-content: center;
+  }
 `;
 
 export const SocialLink = styled.a<{ $palette: PaletteType }>`
@@ -102,6 +128,16 @@ export const SocialLink = styled.a<{ $palette: PaletteType }>`
     color: ${({ $palette }) => $palette.greenDefault};
     background: ${({ $palette }) => $palette.greenDefault}15;
   }
+
+  @media (max-width: 768px) {
+    width: 44px;
+    height: 44px;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
 `;
 
 export const FooterCopyright = styled.p<{ $palette: PaletteType }>`
@@ -109,6 +145,11 @@ export const FooterCopyright = styled.p<{ $palette: PaletteType }>`
   color: ${({ $palette }) => $palette.fontSeconry};
   margin: 0;
   opacity: 0.8;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 
   @media (max-width: 480px) {
     font-size: 0.875rem;

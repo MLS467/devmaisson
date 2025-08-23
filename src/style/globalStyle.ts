@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+      /* outline: 1px solid rgba(255,0,0,0.2); // debug de alinhamento */
   }
 
   body {

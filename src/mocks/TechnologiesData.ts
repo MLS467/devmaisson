@@ -96,6 +96,7 @@ export const databaseTechnologies: Technology[] = [
     imagePath:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
     name: "MySQL",
+    projectLink: "https://github.com/MLS467/Node.JS_e_MySQL.git",
   },
   {
     imagePath:

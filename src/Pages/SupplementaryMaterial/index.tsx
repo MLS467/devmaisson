@@ -1,13 +1,16 @@
 import { IoIosDocument } from "react-icons/io";
 import HeaderPagesDefault from "../../components/HeaderPagesDefault";
 import SupplementaryMaterialComponent from "../../components/SupplementaryMaterialComponent";
-import { ButtonDefaultStyled } from "../../components/ButtonDefault/style";
+import ButtonCard from "../../components/ButtonCard";
 import { FaDownload, FaRegPlayCircle } from "react-icons/fa";
 import { IoEyeSharp } from "react-icons/io5";
 import { CardsContainer, SpeakMe, TextInfo } from "./style";
 import { CiPlay1 } from "react-icons/ci";
+import { useTheme } from "../../Hooks/useTheme";
 
 export const SupplementaryMaterial = () => {
+  const { palette } = useTheme();
+
   const handleDownload = () => {
     const url = import.meta.env.VITE_DOWNLOAD_CURRICULO;
     const link = document.createElement("a");
@@ -36,14 +39,24 @@ export const SupplementaryMaterial = () => {
           title="Currículo Completo"
           description="Acesse meu currículo detalhado em PDF com todas as informações sobre formação, experiências e projetos realizados."
         >
-          <ButtonDefaultStyled onClick={handleDownload}>
-            <FaDownload />
-            Currículo
-          </ButtonDefaultStyled>
-          <ButtonDefaultStyled onClick={handleOpenPDF}>
-            <IoEyeSharp />
-            Visualizar
-          </ButtonDefaultStyled>
+          <div
+            style={{
+              width: "100%",
+              gap: "12px",
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: "1rem",
+            }}
+          >
+            <ButtonCard onClick={handleDownload} palette={palette}>
+              <FaDownload />
+              Currículo
+            </ButtonCard>
+            <ButtonCard onClick={handleOpenPDF} palette={palette}>
+              <IoEyeSharp />
+              Visualizar
+            </ButtonCard>
+          </div>
         </SupplementaryMaterialComponent>
 
         <SupplementaryMaterialComponent
@@ -51,17 +64,26 @@ export const SupplementaryMaterial = () => {
           title="Video Currículo"
           description="Acesse meu currículo detalhado em vídeo com todas as informações sobre formação, experiências e projetos realizados."
         >
-          <ButtonDefaultStyled>
-            <FaRegPlayCircle />
-            Assistir
-          </ButtonDefaultStyled>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              justifyContent: "center",
+              marginTop: "1rem",
+            }}
+          >
+            <ButtonCard palette={palette}>
+              <FaRegPlayCircle />
+              Assistir
+            </ButtonCard>
+          </div>
         </SupplementaryMaterialComponent>
       </CardsContainer>
       <TextInfo>
         Interessado em conversar? Estou sempre aberto para novas oportunidades e
         projetos interessantes.
         <SpeakMe>
-          <ButtonDefaultStyled>Vamos Conversar</ButtonDefaultStyled>
+          <ButtonCard palette={palette}>Vamos Conversar</ButtonCard>
         </SpeakMe>
       </TextInfo>
     </div>

@@ -14,6 +14,6 @@ export const data = [
   },
   {
     title: "Reconhecimento",
-    desc: "Instituição nota máxima MEC",
+    desc: "Monitor em Estruturas de Dados",
   },
 ];

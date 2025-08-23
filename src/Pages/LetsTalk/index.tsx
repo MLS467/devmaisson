@@ -1,4 +1,6 @@
 import HeaderPagesDefault from "../../components/HeaderPagesDefault";
+import ButtonCard from "../../components/ButtonCard";
+import { FaPaperPlane } from "react-icons/fa";
 import { useTheme } from "../../Hooks/useTheme";
 import { LetsTalkData } from "../../mocks/LetsTalkData";
 import {
@@ -19,7 +21,6 @@ import {
   Label,
   Input,
   TextArea,
-  SubmitButton,
 } from "./style";
 
 const LetsTalk = () => {
@@ -115,12 +116,14 @@ const LetsTalk = () => {
               />
             </FormGroup>
 
-            <SubmitButton $palette={palette}>
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z" />
-              </svg>
-              Enviar Mensagem
-            </SubmitButton>
+            <div style={{ marginTop: "1.5rem" }}>
+              <ButtonCard
+                text="Enviar Mensagem"
+                icon={<FaPaperPlane />}
+                palette={palette}
+                className="form-submit"
+              />
+            </div>
           </FormContainer>
         </RightSection>
       </ContentContainer>

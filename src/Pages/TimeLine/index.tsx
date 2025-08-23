@@ -31,7 +31,7 @@ const TimeLine = () => {
       <div className="timelineList">
         {timelineData.map((item, index) => (
           <TimeLineComponents
-            key={item.id}
+            key={`${item.title}${item.id + index}`}
             icon={timelineIcons[index] || timelineIcons[0]}
             title={item.title}
             subtitle={item.subtitle}
