@@ -6,7 +6,7 @@ export const dataContentAbout = {
 export const data = [
   {
     title: "Formação",
-    desc: "Técnologia em Sistemas para Internet - IFSUL",
+    desc: "Tecnologia em Sistemas para Internet - IFSUL",
   },
   {
     title: "Especialização",

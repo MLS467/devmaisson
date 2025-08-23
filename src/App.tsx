@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { ThemeContext } from "./context/Theme/themeContext";
 import type { PaletteType } from "./constants/colors";
 import { lightPalette } from "./constants/colors";
+import LoadingAnimation from "./components/LoadingAnimation";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import FeaturedProjects from "./Pages/FeaturedProjects";
@@ -17,15 +18,17 @@ function App() {
   const palette: PaletteType = context?.palette || lightPalette;
 
   return (
-    <AppContainer $palette={palette}>
-      <Home />
-      <About />
-      <FeaturedProjects />
-      <TimeLine />
-      <SupplementaryMaterial />
-      <LetsTalk />
-      <Footer />
-    </AppContainer>
+    <LoadingAnimation>
+      <AppContainer $palette={palette}>
+        <Home />
+        <About />
+        <FeaturedProjects />
+        <TimeLine />
+        <SupplementaryMaterial />
+        <LetsTalk />
+        <Footer />
+      </AppContainer>
+    </LoadingAnimation>
   );
 }
 
