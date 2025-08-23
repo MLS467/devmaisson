@@ -260,6 +260,10 @@ export const ArrowBackContainer = styled.div`
   width: 100%;
   height: auto;
 
+  @media (max-width: 768px) {
+    bottom: 5vh;
+  }
+
   svg {
     animation: bounce 1.2s infinite;
   }

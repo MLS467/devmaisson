@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
       /* outline: 1px solid rgba(255,0,0,0.2); // debug de alinhamento */
   }
 
-  body {
+  html, body {
     width: 100%;
     height: 100vh;
     background-color: ${(props) => props.$palette.background};
@@ -22,5 +22,6 @@ export const GlobalStyle = createGlobalStyle<GlobalStyleProps>`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
   }
 `;
