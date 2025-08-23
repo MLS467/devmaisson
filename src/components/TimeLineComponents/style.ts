@@ -7,9 +7,23 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
   margin-bottom: 3rem;
 
   @media (max-width: 768px) {
-    margin-bottom: 2.5rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background: ${({ palette }) => palette.background};
+    border: 1px solid ${({ palette }) => `${palette.fontSeconry}30`};
+    border-radius: 12px;
+    box-shadow: 0 4px 12px ${({ palette }) => `${palette.fontSeconry}20`};
+    transition: all 0.3s ease;
+    max-width: 100%;
+    width: 100%;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px ${({ palette }) => `${palette.blueDefault}30`};
+      border-color: ${({ palette }) => `${palette.blueDefault}50`};
+    }
   }
 
   .timelineIcon {
@@ -26,11 +40,16 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     transition: all 0.3s ease;
 
     @media (max-width: 768px) {
-      width: 50px;
-      height: 50px;
-      margin-right: 0;
-      margin-bottom: 1rem;
+      width: 60px;
+      height: 60px;
+      margin: 5% 0 !important;
       align-self: center;
+      position: relative;
+      z-index: 3;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      flex-shrink: 0;
     }
 
     @media (max-width: 480px) {
@@ -46,6 +65,8 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
       @media (max-width: 768px) {
         width: 24px;
         height: 24px;
+        display: block;
+        margin: 0 auto;
       }
 
       @media (max-width: 480px) {
@@ -60,8 +81,10 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     padding-left: 1rem;
 
     @media (max-width: 768px) {
-      padding-left: 0;
+      padding: 0;
       text-align: center;
+      width: 100%;
+      max-width: 100%;
     }
   }
 
@@ -76,7 +99,10 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -92,7 +118,9 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     }
 
     @media (max-width: 768px) {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      text-align: center;
+      margin-bottom: 0.5rem;
     }
 
     @media (max-width: 480px) {
@@ -113,9 +141,14 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     white-space: nowrap;
 
     @media (max-width: 768px) {
-      font-size: 0.9rem;
-      white-space: normal;
+      font-size: 1rem;
       text-align: center;
+      padding: 0.5rem 1rem;
+      background: ${({ palette }) => `${palette.greenDefault}15`};
+      border-radius: 20px;
+      display: inline-block;
+      margin: 0 auto;
+      width: fit-content;
     }
   }
 
@@ -126,7 +159,9 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     margin-bottom: 0.5rem;
 
     @media (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 0.75rem;
     }
 
     @media (max-width: 480px) {
@@ -139,6 +174,13 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     color: ${({ palette }) => palette.fontSeconry};
     margin-bottom: 1rem;
 
+    @media (max-width: 768px) {
+      font-size: 0.95rem;
+      text-align: center;
+      margin-bottom: 1.25rem;
+      font-style: italic;
+    }
+
     @media (max-width: 480px) {
       font-size: 0.9rem;
     }
@@ -150,6 +192,15 @@ export const TimelineItemContainer = styled.div<{ palette: PaletteType }>`
     color: ${({ palette }) => palette.fontSeconry};
     margin: 0;
     max-width: none;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      line-height: 1.7;
+      text-align: justify;
+      padding: 0 0.5rem;
+      margin: 0 auto;
+      max-width: 100%;
+    }
 
     @media (max-width: 480px) {
       font-size: 0.9rem;

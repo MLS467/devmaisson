@@ -22,6 +22,10 @@ export const AboutContainer = styled.div<StyledProps>`
     flex-direction: row;
     max-width: 1200px;
     margin-top: 30px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
 
   .titleContainer {
@@ -49,6 +53,13 @@ export const AboutContainer = styled.div<StyledProps>`
     flex-direction: column;
     align-items: center;
     margin-left: 10%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      text-align: justify;
+      justify-content: center;
+      margin-left: 0;
+    }
 
     p {
       font-size: 1.3rem;
