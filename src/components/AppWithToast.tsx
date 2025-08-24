@@ -23,6 +23,7 @@ const AppWithToast: React.FC = () => {
         pauseOnHover
         theme={isDark ? "dark" : "light"}
         transition={Bounce}
+        limit={1}
       />
       <ThemedGlobalStyle />
       <DescriptionPageProvider>

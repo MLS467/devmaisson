@@ -83,7 +83,14 @@ export const SupplementaryMaterial = () => {
         Interessado em conversar? Estou sempre aberto para novas oportunidades e
         projetos interessantes.
         <SpeakMe>
-          <ButtonCard palette={palette}>Vamos Conversar</ButtonCard>
+          <a
+            href="#contact"
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <ButtonCard palette={palette}>Vamos Conversar</ButtonCard>
+          </a>
         </SpeakMe>
       </TextInfo>
     </div>

@@ -45,9 +45,7 @@ export const ButtonCardStyled = styled.button<ButtonCardStyledProps>`
     color: white;
     border: 1px solid ${lightPalette.greenDefault};
     box-shadow: ${lightPalette.greenDefault} 0px 5px 15px;
-  }
-
-  /* Ajustes específicos para tablets/mobile até 768px */
+  } /* Ajustes específicos para tablets/mobile até 768px */
   @media (max-width: 768px) {
     padding: 14px 22px;
     font-size: 15px;
