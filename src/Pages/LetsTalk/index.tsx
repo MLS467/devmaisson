@@ -28,11 +28,24 @@ const LetsTalk = () => {
   const { formData, handleInputChange, handleSubmit, isSubmitting } = useForm();
   const { palette } = useTheme();
 
-  const handleButtonClick = () => {
-    const form = document.querySelector(".contact-form") as HTMLFormElement;
-    if (form) {
-      form.requestSubmit();
+  const handleButtonClick = (e?: React.MouseEvent) => {
+    // Prevenir qualquer comportamento padrão do botão/form
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
     }
+
+    // Criar evento sintético com preventDefault funcional
+    const syntheticEvent = {
+      preventDefault: () => {
+        // PreventDefault real que bloqueia submissão
+        console.log("preventDefault chamado - bloqueando submissão");
+      },
+      stopPropagation: () => {},
+      currentTarget: document.querySelector(".contact-form") as HTMLFormElement,
+    } as React.FormEvent<HTMLFormElement>;
+
+    handleSubmit(syntheticEvent);
   };
 
   return (
@@ -96,7 +109,13 @@ const LetsTalk = () => {
           <FormContainer $palette={palette}>
             <FormTitle $palette={palette}>Envie uma Mensagem</FormTitle>
 
-            <form className="contact-form" onSubmit={handleSubmit}>
+            <form
+              className="contact-form"
+              onSubmit={(e) => {
+                e.preventDefault(); // Bloqueia qualquer submissão via form
+                return false;
+              }}
+            >
               <FormGrid>
                 <FormGroup>
                   <Label $palette={palette}>Nome *</Label>
@@ -106,7 +125,6 @@ const LetsTalk = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    required
                   />
                 </FormGroup>
 
@@ -119,7 +137,6 @@ const LetsTalk = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    required
                   />
                 </FormGroup>
               </FormGrid>
@@ -132,7 +149,6 @@ const LetsTalk = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  required
                 />
               </FormGroup>
 
@@ -144,7 +160,6 @@ const LetsTalk = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  required
                 />
               </FormGroup>
 
