@@ -1,7 +1,8 @@
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import * as yup from "yup";
-import { useState, ReactNode } from "react";
+import { useState } from "react";
+import type { ReactNode } from "react";
 import { FormContext } from "./FormContext";
 
 type FormData = {
@@ -16,7 +17,7 @@ type FormContextProviderProps = {
 };
 
 export type FormContextType = {
-  formData: FormDataType;
+  formData: FormData;
   handleInputChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
@@ -130,18 +131,17 @@ export const FormContextProvider = ({ children }: FormContextProviderProps) => {
 
   return (
     <FormContext.Provider
-      value={
-        {
-          formData,
-          handleInputChange,
-          handleSubmit,
-          isSubmitting,
-        } as FormContextType
-      }
+      value={{
+        formData,
+        handleInputChange,
+        handleSubmit,
+        isSubmitting,
+      }}
     >
       {children}
     </FormContext.Provider>
   );
 };
 
+export { FormContext };
 export default FormContextProvider;

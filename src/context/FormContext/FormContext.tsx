@@ -7,9 +7,11 @@ export type FormContextType = {
     subject: string;
     message: string;
   };
-  setFormData: React.Dispatch<
-    React.SetStateAction<FormContextType["formData"]>
-  >;
+  handleInputChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  isSubmitting: boolean;
 };
 
 export const FormContext = createContext<FormContextType | undefined>(

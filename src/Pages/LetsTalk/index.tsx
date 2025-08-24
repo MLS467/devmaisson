@@ -23,12 +23,17 @@ import {
   TextArea,
 } from "./style";
 import useForm from "../../Hooks/useForm";
-import type { FormContextType } from "../../context/FormContext/FormContext";
 
 const LetsTalk = () => {
-  const { formData, handleInputChange, handleSubmit, isSubmitting } =
-    useForm() as FormContextType;
+  const { formData, handleInputChange, handleSubmit, isSubmitting } = useForm();
   const { palette } = useTheme();
+
+  const handleButtonClick = () => {
+    const form = document.querySelector(".contact-form") as HTMLFormElement;
+    if (form) {
+      form.requestSubmit();
+    }
+  };
 
   return (
     <LetsTalkContainer $palette={palette}>
@@ -91,7 +96,7 @@ const LetsTalk = () => {
           <FormContainer $palette={palette}>
             <FormTitle $palette={palette}>Envie uma Mensagem</FormTitle>
 
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleSubmit}>
               <FormGrid>
                 <FormGroup>
                   <Label $palette={palette}>Nome *</Label>
@@ -149,9 +154,7 @@ const LetsTalk = () => {
                   icon={<FaPaperPlane />}
                   palette={palette}
                   className="form-submit"
-                  onClick={(e: React.FormEvent<HTMLFormElement>) =>
-                    handleSubmit(e)
-                  }
+                  onClick={handleButtonClick}
                 />
               </div>
             </form>
