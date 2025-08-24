@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import HeaderPagesDefault from "../../components/HeaderPagesDefault";
 import ButtonCard from "../../components/ButtonCard";
 import { FaPaperPlane } from "react-icons/fa";
@@ -22,9 +23,115 @@ import {
   Input,
   TextArea,
 } from "./style";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
+import * as yup from "yup";
+
+const validationSchema = yup.object().shape({
+  name: yup
+    .string()
+    .required("Nome é obrigatório")
+    .min(2, "Nome deve ter pelo menos 2 caracteres")
+    .max(50, "Nome deve ter no máximo 50 caracteres"),
+  email: yup
+    .string()
+    .required("Email é obrigatório")
+    .email("Digite um email válido"),
+  subject: yup
+    .string()
+    .required("Assunto é obrigatório")
+    .min(3, "Assunto deve ter pelo menos 3 caracteres")
+    .max(100, "Assunto deve ter no máximo 100 caracteres"),
+  message: yup
+    .string()
+    .required("Mensagem é obrigatória")
+    .min(10, "Mensagem deve ter pelo menos 10 caracteres")
+    .max(1000, "Mensagem deve ter no máximo 1000 caracteres"),
+});
 
 const LetsTalk = () => {
   const { palette } = useTheme();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Validação com Yup
+      await validationSchema.validate(formData, { abortEarly: false });
+
+      // Se chegou aqui, a validação passou
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Maisson",
+        current_date: new Date().toLocaleString("pt-BR", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          timeZone: "America/Sao_Paulo",
+        }),
+      };
+
+      // Enviar email
+      const result = await emailjs.send(
+        import.meta.env.VITE_SERVICE_EMAIL_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_PUBLIC_KEY_ID
+      );
+
+      if (result.status === 200) {
+        // Sucesso - mostrar toast de sucesso
+        toast.success("Email enviado com sucesso! Obrigado pelo contato.");
+
+        // Limpar formulário
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error: any) {
+      // Verificar se é erro de validação do Yup
+      if (error.name === "ValidationError") {
+        // Mostrar todos os erros de validação
+        error.errors.forEach((errorMessage: string) => {
+          toast.error(`${errorMessage}`);
+        });
+      } else {
+        // Erro do EmailJS ou outro erro
+        console.error("Erro ao enviar email:", error);
+        toast.error("Erro ao enviar email. Tente novamente em alguns minutos.");
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <LetsTalkContainer $palette={palette}>
@@ -90,7 +197,13 @@ const LetsTalk = () => {
             <FormGrid>
               <FormGroup>
                 <Label $palette={palette}>Nome *</Label>
-                <Input $palette={palette} placeholder="Seu nome completo" />
+                <Input
+                  $palette={palette}
+                  placeholder="Seu nome completo"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                />
               </FormGroup>
 
               <FormGroup>
@@ -99,13 +212,22 @@ const LetsTalk = () => {
                   $palette={palette}
                   type="email"
                   placeholder="seu@email.com"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                 />
               </FormGroup>
             </FormGrid>
 
             <FormGroup>
               <Label $palette={palette}>Assunto *</Label>
-              <Input $palette={palette} placeholder="Assunto da mensagem" />
+              <Input
+                $palette={palette}
+                placeholder="Assunto da mensagem"
+                name="subject"
+                value={formData.subject}
+                onChange={handleInputChange}
+              />
             </FormGroup>
 
             <FormGroup>
@@ -113,15 +235,19 @@ const LetsTalk = () => {
               <TextArea
                 $palette={palette}
                 placeholder="Conte-me sobre seu projeto ou oportunidade..."
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
               />
             </FormGroup>
 
             <div style={{ marginTop: "1.5rem" }}>
               <ButtonCard
-                text="Enviar Mensagem"
+                text={isSubmitting ? "Enviando..." : "Enviar Mensagem"}
                 icon={<FaPaperPlane />}
                 palette={palette}
                 className="form-submit"
+                onClick={handleSubmit}
               />
             </div>
           </FormContainer>
