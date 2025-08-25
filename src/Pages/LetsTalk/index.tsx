@@ -23,10 +23,20 @@ import {
   TextArea,
 } from "./style";
 import useForm from "../../Hooks/useForm";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const LetsTalk = () => {
-  const { formData, handleInputChange, handleSubmit, isSubmitting } = useForm();
+  const {
+    formData,
+    handleInputChange,
+    handleSubmit,
+    isSubmitting,
+    recaptchaRef,
+    setCaptchaOk,
+  } = useForm();
   const { palette } = useTheme();
+
+  const reCaptcha = import.meta.env.VITE_SITE_KEY_RECAPTCHA;
 
   const handleButtonClick = (e?: React.MouseEvent) => {
     // Prevenir qualquer comportamento padrão do botão/form
@@ -162,6 +172,13 @@ const LetsTalk = () => {
                   onChange={handleInputChange}
                 />
               </FormGroup>
+
+              {/* reCAPTCHA */}
+              <ReCAPTCHA
+                sitekey={reCaptcha}
+                onChange={() => setCaptchaOk(true)}
+                ref={recaptchaRef}
+              />
 
               <div style={{ marginTop: "1.5rem" }}>
                 <ButtonCard

@@ -1,9 +1,10 @@
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import * as yup from "yup";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { FormContext } from "./FormContext";
+import type ReCAPTCHA from "react-google-recaptcha";
 
 type FormData = {
   name: string;
@@ -23,9 +24,15 @@ export type FormContextType = {
   ) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   isSubmitting: boolean;
+  recaptchaRef: React.RefObject<ReCAPTCHA | null>;
+  captchaOk: boolean;
+  setCaptchaOk: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export const FormContextProvider = ({ children }: FormContextProviderProps) => {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [captchaOk, setCaptchaOk] = useState(false);
+
   const validationSchema = yup.object().shape({
     name: yup
       .string()
@@ -74,6 +81,11 @@ export const FormContextProvider = ({ children }: FormContextProviderProps) => {
     try {
       // Validação com Yup
       await validationSchema.validate(formData, { abortEarly: false });
+
+      if (!captchaOk) {
+        toast.error("Por favor, confirme que você não é um robô!");
+        return;
+      }
 
       // Se chegou aqui, a validação passou
       const templateParams = {
@@ -136,6 +148,9 @@ export const FormContextProvider = ({ children }: FormContextProviderProps) => {
         handleInputChange,
         handleSubmit,
         isSubmitting,
+        recaptchaRef,
+        captchaOk,
+        setCaptchaOk,
       }}
     >
       {children}
