@@ -174,11 +174,23 @@ const LetsTalk = () => {
               </FormGroup>
 
               {/* reCAPTCHA */}
-              <ReCAPTCHA
-                sitekey={reCaptcha}
-                onChange={() => setCaptchaOk(true)}
-                ref={recaptchaRef}
-              />
+              <div
+                style={{
+                  marginTop: "1rem",
+                  marginBottom: "1rem",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  overflow: "hidden",
+                  maxWidth: "100%",
+                }}
+              >
+                <ReCAPTCHA
+                  sitekey={reCaptcha}
+                  onChange={() => setCaptchaOk(true)}
+                  ref={recaptchaRef}
+                />
+              </div>
 
               <div style={{ marginTop: "1.5rem" }}>
                 <ButtonCard

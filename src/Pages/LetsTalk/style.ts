@@ -10,6 +10,10 @@ export const LetsTalkContainer = styled.div<{ $palette: PaletteType }>`
   @media (max-width: 768px) {
     width: 95%;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
